@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+"use strict";
+/* 
+  Pretty print JSON from the standard input
+
+  Usage: command outputting json | jsonpp
+*/
+(function() {
+  var json = "";
+  process.stdin.on("data", function(chunk) {
+    json += chunk;
+  });
+  
+  process.stdin.on("end", function() {
+    var object = JSON.parse(json);
+    var pretty = JSON.stringify(object, null, 2);
+    console.log(pretty);
+  });
+})();
