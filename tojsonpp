@@ -1,0 +1,6 @@
+# 
+# Replace a json file with an indentented version of the
+# same file
+#
+cat $1 | jsonpp > /tmp/json
+mv /tmp/json $1
