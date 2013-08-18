@@ -1,6 +1,6 @@
 while text=$($@);
 do 
-  sleep 1 
+  sleep 0.1
   clear 
   echo "$text"; 
 done
