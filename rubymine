@@ -1,0 +1,15 @@
+#!/bin/bash
+
+EXECUTABLE=/Applications/RubyMine.app/Contents/MacOS/rubymine
+file=$1
+
+# make the file absolute if it's not already
+if [[ !(${file} == /*) && !(${file} == ~*)  ]]
+then
+  file="$(pwd)/${file}"
+fi
+
+if [[ -e ${file} ]]
+then
+  $EXECUTABLE ${file}
+fi
